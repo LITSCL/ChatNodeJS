@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <script src="socket.io/socket.io.js"></script> <!-- Aquí se carga la librería de Socket.IO (La que permite la comunicación bidireccional). -->
+    <script src="main.js"></script>  
+    <style>
+        #mensajes {
+            width: 95%;
+            max-width: 400px;
+            height: 350px;
+            overflow-y: scroll;
+            border: 1px solid #eee;
+            box-shadow: 0px 0px 20px #ccc inset;
+            margin-bottom: 5px;
+        }
+
+        .mensaje {
+            margin: 20px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: white;
+        }
+
+        #formulario {
+            border: 1px solid #ccc;
+            box-shadow: 0px 0px 20px #ccc inset;
+            width: 400px;
+        }
+
+        #nombre {
+            margin-top: 2px;
+        }
+
+        input[type="submit"] {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chat con Socket.IO y NodeJS</h1>
+    <div id="mensajes">
+
+    </div>
+    <div id="formulario">    
+        <form onsubmit="return addMensaje(this);">
+            <input id="nombre" type="text" placeholder="Nombre">
+            <textarea id="texto" cols="30" rows="10" placeholder="Mensaje..."></textarea> 
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+</body>
+</html>
