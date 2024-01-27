@@ -26,7 +26,7 @@ io.on("connection", function(socket) { //El método "on" permite capturar evento
         io.sockets.emit("mensajes", mensajes); //En esta instrucción se envían los mensajes a todos los sockets que se encuentra conectados (Clientes).
     });
 
-    socket.on("disconnect", datos => {
+    socket.on("disconnect", function() {
         console.log("Usuario desconectado");
     });
 });
